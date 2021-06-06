@@ -1,17 +1,43 @@
 var gameState = "quiz";
 var levelState = "one";
-var q, wrong, right;
+var wrong, right, spaceX, generalscienceX, techX, gkX, playSet, options, gkDis, gensciDis, spaceDis, techDis ;
  right = 0;
  wrong = 0;
+
+ spaceX = "not done";
+ techX = "not done";
+ generalscienceX = "not done";
+ gkX = "not done";
+
+ playSet ="none";
+ 
 function preload() {
   
 }
 function setup() {
   createCanvas(displayWidth,displayHeight);
-  q = new scieasy();
+  options = new option();
+
+  gkDis = new gk();
+  gensciDis = new sci();
+  spaceDis = new space();
+  techDis = new tech();
 }
 
 function draw() {
-   q.display();
+  options.display();
+
+  if(playSet == "generalSci"){
+    gensciDis.display();
+  }
+  if(playSet == "tech"){
+    techDis.display();
+  }
+  if(playSet == "space"){
+    spaceDis.display();
+  }
+  if(playSet == "generalK"){
+    gkDis.display();
+  }
 }
 
